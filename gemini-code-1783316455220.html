@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinh Phục Mọi Miền Kiến Thức - Ms Lê Hằng English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8854C0;
+            --secondary-color: #FDCB6E;
+            --accent-color: #00C9A7;
+            --correct-color: #00D26A;
+            --wrong-color: #FF4757;
+            --text-color: #2D3436;
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #8854C0, #E0C3FC, #00C9A7, #FDCB6E);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            padding: 20px 10px;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Họa tiết lơ lửng SVG Pattern */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm1-61c3.16 0 6-2.84 6-6s-2.84-6-6-6-6 2.84-6 6 2.84 6 6 6zm-.667 45.333c2.392 0 4.333-1.94 4.333-4.333s-1.94-4.333-4.333-4.333c-2.393 0-4.333 1.94-4.333 4.333s1.94 4.333 4.333 4.333zM5 52c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm70 0c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM24 55c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm41-39c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM18 7c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm56 6c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-4 47c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM33 18c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-6 33c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm33-6c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm18-19c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-65 5c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm53 32c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM9 73c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm28-3c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm34 1c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM2 29c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm44-15c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm25 10c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-14 49c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM15 30c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm52-12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM22 80c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm51-3c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM34 4c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm25 4c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM11 63c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm47 13c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM18 43c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm54-15c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM52 64c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-35 8c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm20-56c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm34 14c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-1 57c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM21 34c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm41 19c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM15 13c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm53 43c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 80c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56 0c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM25 24c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm39 6c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM15 56c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm54-1c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM43 43c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-12 18c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm24 16c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM33 63c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm31-28c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM18 69c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm53-12c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-9-34c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM30 40c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm23 5c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-35-15c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm44 26c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM4 15c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm74 14c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM24 74c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm44-5c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM9 22c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm62 5c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM37 34c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm18-12c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM48 70c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-16 8c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM3 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm74 6c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM28 14c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm34 2c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM10 47c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56 12c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%23ffffff' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 20px;
+            border-radius: 20px;
+            box-shadow: 0 8px 0px rgba(0, 0, 0, 0.15);
+            margin-bottom: 25px;
+            border: 3px solid var(--primary-color);
+        }
+
+        header h2 {
+            font-size: 1.1rem;
+            color: #6c5ce7;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        .banner-warning {
+            background: #FFEAA7;
+            border: 3px dashed #E17055;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            color: #D63031;
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            box-shadow: 0 6px 0px rgba(225, 112, 85, 0.2);
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 0px rgba(0, 0, 0, 0.1);
+            border: 4px solid #E0C3FC;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .question-number {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: #634a00;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            box-shadow: 0 3px 0 #d1a13d;
+        }
+
+        .question-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            color: #2D3436;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background: #F7F9FA;
+            border: 3px solid #E2E8F0;
+            border-radius: 18px;
+            padding: 15px 20px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            transition: transform 0.1s, background-color 0.2s, border-color 0.2s, box-shadow 0.1s;
+            box-shadow: 0 5px 0px #E2E8F0;
+            display: flex;
+            align-items: center;
+        }
+
+        .option-btn:hover:not([disabled]) {
+            transform: scale(1.02);
+            background: #EDF2F7;
+            border-color: #CBD5E0;
+            box-shadow: 0 5px 0px #CBD5E0;
+        }
+
+        .option-btn:active:not([disabled]) {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0px #CBD5E0;
+        }
+
+        /* Đúng/Sai States */
+        .option-btn.correct {
+            background-color: #E6FFFA !important;
+            border-color: var(--correct-color) !important;
+            color: #006b35 !important;
+            box-shadow: 0 5px 0px var(--correct-color) !important;
+            font-weight: 800;
+        }
+
+        .option-btn.wrong {
+            background-color: #FFEFFF !important;
+            border-color: var(--wrong-color) !important;
+            color: #bd1324 !important;
+            box-shadow: 0 5px 0px var(--wrong-color) !important;
+            font-weight: 800;
+        }
+
+        .option-btn[disabled] {
+            cursor: not-allowed;
+        }
+
+        /* Vùng giải thích */
+        .explanation-box {
+            margin-top: 20px;
+            background: #F8F6FF;
+            border-left: 6px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 15px;
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+            border-top: 1px solid #E8E5F7;
+            border-right: 1px solid #E8E5F7;
+            border-bottom: 1px solid #E8E5F7;
+        }
+
+        .explanation-box.show {
+            display: block;
+        }
+
+        .explanation-box h4 {
+            color: var(--primary-color);
+            font-weight: 800;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .explanation-content {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4A5568;
+        }
+
+        .explanation-content p {
+            margin-bottom: 6px;
+        }
+
+        .explanation-content ul {
+            margin-left: 20px;
+            margin-bottom: 6px;
+        }
+
+        /* Hiệu ứng Rung lắc (Shake) */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+
+        .shake-animation {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Nút Nộp Bài tổng kết */
+        .submit-container {
+            text-align: center;
+            margin: 40px 0 60px;
+        }
+
+        .submit-global-btn {
+            background: #FF9F43;
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 8px 0px #D35400;
+            transition: all 0.1s;
+        }
+
+        .submit-global-btn:hover {
+            background: #FFAA52;
+            transform: scale(1.03);
+        }
+
+        .submit-global-btn:active {
+            transform: translateY(6px);
+            box-shadow: 0 2px 0px #D35400;
+        }
+
+        /* Modal hiển thị điểm kết quả */
+        .modal-overlay {
+            position: fixed;
+            top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 30px;
+            padding: 30px;
+            text-align: center;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 15px 0px rgba(0,0,0,0.2);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .modal-score {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .modal-comment {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #4A5568;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .modal-close-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 0 #5b329c;
+        }
+
+        .modal-close-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #5b329c;
+        }
+
+        /* Canvas hiệu ứng pháo hoa pháo giấy */
+        #confetti-canvas {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="confetti-canvas"></canvas>
+
+    <div class="container">
+        <header>
+            <h2>Giáo viên tạo: Ms Lê Hằng English</h2>
+            <h1>LUYỆN THI ĐÁNH GIÁ NĂNG LỰC HSA</h1>
+        </header>
+
+        <div class="banner-warning">
+            ⚠️ <strong>LỜI NHẮC CỰC KỲ QUAN TRỌNG</strong> ⚠️<br>
+            Chỉ có đọc kỹ giải thích ngay sau mỗi câu, sau đó ghi lại từ vựng/cấu trúc mới vào vở để học thì mới thực sự giỏi lên. Làm cho xong mà không đọc giải thích hay đọc qua loa không ghi chép thì chỉ tốn thời gian vô ích!<br>
+            <strong>* Kéo tới đâu, làm tới đó! *</strong>
+        </div>
+
+        <!-- Khay chứa câu hỏi sinh tự động bằng JS để hỗ trợ đảo vị trí ABCD -->
+        <div id="quiz-container"></div>
+
+        <div class="submit-container">
+            <button class="submit-global-btn" onclick="calculateTotalResult()">Nộp Bài Tổng Kết</button>
+        </div>
+    </div>
+
+    <!-- Kết quả Modal -->
+    <div class="modal-overlay" id="score-modal">
+        <div class="modal-content">
+            <div class="modal-title">🎉 Kết Quả Bài Làm 🎉</div>
+            <div class="modal-score" id="score-text">0/50</div>
+            <div class="modal-comment" id="comment-text">Đang tính toán...</div>
+            <button class="modal-close-btn" onclick="closeModal()">Đóng và xem lại bài</button>
+        </div>
+    </div>
+
+    <script>
+        // --- CƠ SỞ DỮ LIỆU ĐỀ BÀI CHUẨN XÁC VÀ GIẢI THÍCH CHI TIẾT 100% ---
+        const questionsData = [
+            {
+                id: 1,
+                question: "Since he left his hometown, we _______ any news from him.",
+                options: [
+                    { key: "A", text: "has left/didn’t receive" },
+                    { key: "B", text: "had left/haven’t received" },
+                    { key: "C", text: "haven’t received" },
+                    { key: "D", text: "didn’t receive" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Kể từ khi anh ấy rời quê hương, chúng tôi vẫn chưa nhận được bất kỳ tin tức nào từ anh ấy.<br>2. Phân tích ngữ pháp: Cấu trúc với 'Since': S + hiện tại hoàn thành + since + S + quá khứ đơn. <br>3. Tại sao đúng: Vế 'Since he left...' đã chia quá khứ đơn, nên vế chính cần dùng Hiện tại hoàn thành để diễn tả sự việc kéo dài từ quá khứ tới hiện tại. Đáp án C 'haven't received' khớp hoàn toàn.<br>4. Tại sao sai: A và B sai cấu trúc kết hợp thì của since; D dùng quá khứ đơn không diễn tả được tính kéo dài."
+            },
+            {
+                id: 2,
+                question: "I ______ for the bus for nearly an hour when it finally pulled up, by which time I was frozen.",
+                options: [
+                    { key: "A", text: "was waiting" },
+                    { key: "B", text: "had been waiting" },
+                    { key: "C", text: "waited" },
+                    { key: "D", text: "have been waiting" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Tôi đã đợi xe buýt gần một tiếng đồng hồ khi nó cuối cùng cũng đỗ lại, lúc đó tôi đã lạnh cống rồi.<br>2. Phân tích ngữ pháp: Hành động đợi xe buýt xảy ra liên tục và có thời gian kéo dài ('for nearly an hour') trước một thời điểm/hành động khác trong quá khứ ('when it finally pulled up'). <br>3. Tại sao đúng: Ta dùng thì Quá khứ hoàn thành tiếp diễn (had been waiting) để nhấn mạnh tính liên tục của hành động kéo dài đến trước một mốc quá khứ.<br>4. Tại sao sai: A sai vì quá khứ tiếp diễn không nhấn mạnh thời gian kéo dài liên tục trước mốc; C sai vì quá khứ đơn không hợp lý; D là hiện tại hoàn thành tiếp diễn, sai mốc thời gian."
+            },
+            {
+                id: 3,
+                question: "By the time the government ______ the new law, the economic crisis ______ for over a year.",
+                options: [
+                    { key: "A", text: "passes/will have lasted" },
+                    { key: "B", text: "passed/had lasted" },
+                    { key: "C", text: "passes/has lasted" },
+                    { key: "D", text: "passed/lasted" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Vào thời điểm chính phủ thông qua luật mới, cuộc khủng hoảng kinh tế đã kéo dài hơn một năm.<br>2. Phân tích ngữ pháp: Cấu trúc: By the time + S + V(quá khứ đơn), S + V(quá khứ hoàn thành).<br>3. Tại sao đúng: Hành động khủng hoảng diễn ra trước ('had lasted') và kéo dài tới mốc chính phủ thông qua luật ('passed'). Do đó chọn B.<br>4. Tại sao sai: A và C dùng phối thì tương lai/hiện tại không ăn nhập ngữ cảnh quá khứ; D dùng quá khứ đơn cho vế sau là sai nguyên tắc thứ tự hành động trước sau."
+            },
+            {
+                id: 4,
+                question: "I ______ my report by the time you get back from the conference.",
+                options: [
+                    { key: "A", text: "will finish" },
+                    { key: "B", text: "will have finished" },
+                    { key: "C", text: "finish" },
+                    { key: "D", text: "would finish" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Tôi sẽ hoàn thành bài báo cáo của mình trước khi bạn trở về từ hội nghị.<br>2. Phân tích ngữ pháp: Cấu trúc: By the time + S + V(hiện tại đơn), S + V(tương lai hoàn thành).<br>3. Tại sao đúng: Diễn tả một hành động sẽ hoàn tất trước một thời điểm hoặc hành động khác trong tương lai. 'will have finished' là chính xác.<br>4. Tại sao sai: A sai vì tương lai đơn không thể hiện được việc hoàn tất trước mốc; C và D hoàn toàn sai ngữ pháp phối thì."
+            },
+            {
+                id: 5,
+                question: "The detective suspected that the witness ______ something back during the interview.",
+                options: [
+                    { key: "A", text: "is holding" },
+                    { key: "B", text: "was holding" },
+                    { key: "C", text: "had been holding" },
+                    { key: "D", text: "has held" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Thám tử nghi ngờ rằng nhân chứng đã che giấu điều gì đó trong suốt cuộc phỏng vấn.<br>2. Phân tích ngữ pháp: Hành động che giấu diễn ra liên tục song song hoặc trước thời điểm thám tử nghi ngờ (suspected - quá khứ đơn).<br>3. Tại sao đúng: C dùng Quá khứ hoàn thành tiếp diễn thể hiện một hành động xảy ra và kéo dài liên tục trước mốc quá khứ, phù hợp với động cơ lùi thì trong lời kể gián tiếp.<br>4. Tại sao sai: A và D là các thì hiện tại nên không thể đi sau mệnh đề chính quá khứ đơn 'suspected'; B không tốt bằng C vì không nhấn mạnh được bản chất kéo dài tích tụ trước đó."
+            },
+            {
+                id: 6,
+                question: "At this time next year, I ______ my internship and ______ for a permanent position.",
+                options: [
+                    { key: "A", text: "will finish/will look" },
+                    { key: "B", text: "will have finished/will be looking" },
+                    { key: "C", text: "finish/look" },
+                    { key: "D", text: "am finishing/looking" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Vào thời điểm này năm tới, tôi sẽ hoàn thành kỳ thực tập của mình và đang tìm kiếm một vị trí chính thức.<br>2. Phân tích ngữ pháp: 'At this time next year' chỉ mốc cụ thể trong tương lai. <br>3. Tại sao đúng: Việc thực tập phải hoàn thành trước mốc đó (Tương lai hoàn thành: will have finished) và tại đúng thời điểm đó, người nói đang tiến hành tìm việc (Tương lai tiếp diễn: will be looking).<br>4. Tại sao sai: Các phương án còn lại đều không phản ánh đúng logic thời gian hoàn tất của vế trước và tiếp diễn của vế sau tại mốc xác định."
+            },
+            {
+                id: 7,
+                question: "[Lặp lại Q2] I ______ for the bus for nearly an hour when it finally pulled up, by which time I was frozen.",
+                options: [
+                    { key: "A", text: "was waiting" },
+                    { key: "B", text: "had been waiting" },
+                    { key: "C", text: "waited" },
+                    { key: "D", text: "have been waiting" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Tôi đã đứng chờ xe buýt suốt gần một tiếng khi xe cuối cùng cũng tới.<br>2. Giải thích tương tự Câu 2. Sử dụng Quá khứ hoàn thành tiếp diễn để diễn tả một hành động kéo dài liên tục trước một thời điểm quá khứ."
+            },
+            {
+                id: 8,
+                question: "By 2030, scientists ______ a sustainable way to colonize Mars.",
+                options: [
+                    { key: "A", text: "find" },
+                    { key: "B", text: "will have found" },
+                    { key: "C", text: "will be finding" },
+                    { key: "D", text: "will find" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Trước năm 2030, các nhà khoa học sẽ tìm ra một cách bền vững để định cư trên sao Hỏa.<br>2. Phân tích ngữ pháp: Dấu hiệu 'By + mốc thời gian trong tương lai' -> Sử dụng thì Tương lai hoàn thành.<br>3. Tại sao đúng: 'will have found' chỉ hành động được hoàn tất tính tới một thời điểm tương lai.<br>4. Tại sao sai: A, C, D không dùng đúng cấu trúc hoàn tất trước mốc tương lai."
+            },
+            {
+                id: 9,
+                question: "By the time the rescue team arrived, the hikers ______ in the cave for three days.",
+                options: [
+                    { key: "A", text: "were trapped" },
+                    { key: "B", text: "had been trapped" },
+                    { key: "C", text: "have been trapped" },
+                    { key: "D", text: "are trapped" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Vào thời điểm đội cứu hộ đến, những người đi bộ đường dài đã bị mắc kẹt trong hang động được ba ngày rồi.<br>2. Phân tích: Hành động bị mắc kẹt xảy ra trước thời điểm cứu hộ đến ('arrived' - quá khứ đơn) và có khoảng thời gian 'for three days'.<br>3. Tại sao đúng: Ta dùng thể bị động của thì Quá khứ hoàn thành 'had been trapped'.<br>4. Tại sao sai: A thiếu tính hoàn thành trước mốc; C và D dùng sai dòng thời gian hiện tại."
+            },
+            {
+                id: 10,
+                question: "[Lặp lại Q6] At this time next year, I ______ my internship and ______ for a permanent position.",
+                options: [
+                    { key: "A", text: "will finish/will look" },
+                    { key: "B", text: "am finishing/looking" },
+                    { key: "C", text: "finish/look" },
+                    { key: "D", text: "will have finished/will be looking" }
+                ],
+                correct: "D",
+                explanation: "1. Dịch nghĩa giống Câu 6. Việc kết thúc thực tập diễn ra trước nên dùng tương lai hoàn thành, việc tìm việc đang chạy song song ngay thời điểm đó nên dùng tương lai tiếp diễn."
+            },
+            {
+                id: 11,
+                question: "I _______ for the company for twenty years by the time I retire next month.",
+                options: [
+                    { key: "A", text: "will work" },
+                    { key: "B", text: "will be working" },
+                    { key: "C", text: "will have been working" },
+                    { key: "D", text: "have work" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Tôi sẽ làm việc cho công ty được tròn 20 năm tính đến thời điểm tôi nghỉ hưu vào tháng tới.<br>2. Phân tích: Có 'by the time + mốc tương lai' kèm khoảng thời gian nhấn mạnh tính liên tục 'for twenty years'.<br>3. Tại sao đúng: Sử dụng thì Tương lai hoàn thành tiếp diễn 'will have been working' là chuẩn xác nhất.<br>4. Tại sao sai: A, B không thể hiện tính tích lũy thời gian kéo dài; D sai hoàn toàn cấu trúc."
+            },
+            {
+                id: 12,
+                question: "By the time the government passed the new law, the economic crisis ______ for over a year.",
+                options: [
+                    { key: "A", text: "had been lasting" },
+                    { key: "B", text: "will have lasted" },
+                    { key: "C", text: "has lasted" },
+                    { key: "D", text: "lasted" }
+                ],
+                correct: "A",
+                explanation: "1. Dịch nghĩa: Trước thời điểm chính phủ thông qua luật mới, cuộc khủng hoảng kinh tế đã kéo dài hơn một năm.<br>2. Phân tích: Hành động diễn ra liên tục trước mốc quá khứ đơn 'passed'.<br>3. Tại sao đúng: 'had been lasting' thuộc thì Quá khứ hoàn thành tiếp diễn nhấn mạnh sự kéo dài liên tục trước mốc quá khứ.<br>4. Tại sao sai: B, C dùng sai dòng thời gian; D không thể hiện được thứ tự trước sau rõ ràng."
+            },
+            {
+                id: 13,
+                question: "I ______ with the idea of resigning for months, but after the recent promotion, I’ve decided to stay.",
+                options: [
+                    { key: "A", text: "toyed" },
+                    { key: "B", text: "had been toying" },
+                    { key: "C", text: "have been toying" },
+                    { key: "D", text: "am toying" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Tôi đã nhen nhóm ý định từ chức suốt nhiều tháng nay, nhưng sau đợt thăng chức gần đây, tôi quyết định ở lại.<br>2. Phân tích: Hành động đùa giỡn/nhen nhóm ý định ('toy with') kéo dài từ quá khứ đến nay và có liên hệ với quyết định hiện tại ('I've decided').<br>3. Tại sao đúng: Thì Hiện tại hoàn thành tiếp diễn 'have been toying' diễn tả hành động kéo dài liên tục từ quá khứ đến hiện tại.<br>4. Tại sao sai: A và B ngắt đứt mối liên hệ ở quá khứ; D là hiện tại tiếp diễn không thể hiện được khoảng thời gian 'for months'."
+            },
+            {
+                id: 14,
+                question: "At this time tomorrow, we ________ over the Atlantic on our way to New York.",
+                options: [
+                    { key: "A", text: "will fly" },
+                    { key: "B", text: "will be flying" },
+                    { key: "C", text: "fly" },
+                    { key: "D", text: "will have flown" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Vào thời điểm này ngày mai, chúng tôi sẽ đang bay qua Đại Tây Dương trên đường tới New York.<br>2. Phân tích: Cụm thời gian xác định cụ thể trong tương lai 'At this time tomorrow'.<br>3. Tại sao đúng: Dùng thì Tương lai tiếp diễn 'will be flying' để chỉ hành động đang diễn ra tại một thời điểm cụ thể tương lai.<br>4. Tại sao sai: A chỉ dự định chung chung; D chỉ hành động đã hoàn tất; C là hiện tại đơn."
+            },
+            {
+                id: 15,
+                question: "The building _______ for two years before it was finally completed.",
+                options: [
+                    { key: "A", text: "was under construction" },
+                    { key: "B", text: "had been under construction" },
+                    { key: "C", text: "has been building" },
+                    { key: "D", text: "was being built" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Tòa nhà đã nằm trong quá trình xây dựng được hai năm trước khi nó cuối cùng được hoàn thành.<br>2. Phân tích: Trạng thái nằm dưới sự xây dựng xảy ra trước mốc quá khứ đơn 'was completed' và kéo dài 'for two years'.<br>3. Tại sao đúng: Quá khứ hoàn thành của cấu trúc với cụm giới từ 'had been under construction'.<br>4. Tại sao sai: A dùng quá khứ đơn không nhấn mạnh thời gian trước mốc; C và D sai ngữ pháp ngữ cảnh."
+            },
+            {
+                id: 16,
+                question: "By the time the restoration project is finally sanctioned, the historic manor ______ to ruins.",
+                options: [
+                    { key: "A", text: "will have been falling" },
+                    { key: "B", text: "is falling" },
+                    { key: "C", text: "will have fallen" },
+                    { key: "D", text: "falls" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Trước khi dự án trùng tu được phê duyệt chính thức, khu biệt thự lịch sử sẽ đã sụp đổ thành đống hoang tàn.<br>2. Phân tích: 'By the time + S + hiện tại đơn (is sanctioned)', vế sau dùng Tương lai hoàn thành.<br>3. Tại sao đúng: 'will have fallen' thể hiện việc sụp đổ hoàn tất trước mốc tương lai.<br>4. Tại sao sai: Động từ 'fall' thành đống đổ nát mang tính kết quả, dùng thể tiếp diễn (A) không phù hợp; B, D sai phối thì."
+            },
+            {
+                id: 17,
+                question: "Since he _______ his hometown, we _______ any news from him.",
+                options: [
+                    { key: "A", text: "left/didn’t receive" },
+                    { key: "B", text: "left/haven’t received" },
+                    { key: "C", text: "has left/didn’t receive" },
+                    { key: "D", text: "had left/haven’t received" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa giống Câu 1. <br>2. Cấu trúc chuẩn: Since + S + V(quá khứ đơn), S + V(hiện tại hoàn thành). Nên chọn cặp 'left / haven't received' là đáp án B."
+            },
+            {
+                id: 18,
+                question: "I ______ this book for two weeks, but I still haven’t finished it.",
+                options: [
+                    { key: "A", text: "read" },
+                    { key: "B", text: "am reading" },
+                    { key: "C", text: "have been reading" },
+                    { key: "D", text: "had read" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Tôi đã đọc cuốn sách này được hai tuần rồi, nhưng tôi vẫn chưa đọc xong nó.<br>2. Phân tích: Hành động kéo dài liên tục từ quá khứ đến hiện tại và còn để lại dấu hiệu chưa xong ('still haven't finished').<br>3. Tại sao đúng: Hiện tại hoàn thành tiếp diễn 'have been reading' là chuẩn xác nhất.<br>4. Tại sao sai: A dùng quá khứ đơn; B dùng hiện tại tiếp diễn không chứa khoảng thời gian dài; D dùng quá khứ hoàn thành sai ngữ cảnh dòng thời gian."
+            },
+            {
+                id: 19,
+                question: "While the researchers ______ the experiment in the laboratory, a sudden power failure interrupted the entire testing process.",
+                options: [
+                    { key: "A", text: "conducted" },
+                    { key: "B", text: "were conducting" },
+                    { key: "C", text: "have conducted" },
+                    { key: "D", text: "had conducted" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Trong khi các nhà nghiên cứu đang tiến hành thí nghiệm trong phòng phòng thí nghiệm, một sự cố mất điện đột ngột đã làm gián đoạn toàn bộ quá trình kiểm thử.<br>2. Phân tích: Hành động đang diễn ra trong quá khứ (dùng Quá khứ tiếp diễn) thì có hành động khác xen vào (quá khứ đơn 'interrupted').<br>3. Tại sao đúng: 'were conducting' diễn tả sự việc đang chạy nền.<br>4. Tại sao sai: A, C, D không phản ánh được tính đang diễn ra bị cắt ngang."
+            },
+            {
+                id: 20,
+                question: "We ______ in the garden for hours when it suddenly started to thunder.",
+                options: [
+                    { key: "A", text: "sat" },
+                    { key: "B", text: "were sitting" },
+                    { key: "C", text: "had been sitting" },
+                    { key: "D", text: "have been sitting" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Chúng tôi đã ngồi trong vườn hàng giờ đồng hồ liền trước khi trời bỗng dưng nổi sấm sét.<br>2. Phân tích: Hành động ngồi kéo dài liên tục ('for hours') trước hành động đột ngột xảy ra trong quá khứ là 'started'.<br>3. Tại sao đúng: Quá khứ hoàn thành tiếp diễn 'had been sitting' nhấn mạnh khoảng thời gian kéo dài liên tục trước mốc quá khứ đó.<br>4. Tại sao sai: B là quá khứ tiếp diễn không tập trung vào độ dài thời gian tích lũy lâu; D thuộc thì hiện tại."
+            },
+            {
+                id: 21,
+                question: "I ______ my report by the time you ______ back from the conference.",
+                options: [
+                    { key: "A", text: "will finish/get" },
+                    { key: "B", text: "will have finished/get" },
+                    { key: "C", text: "finish/get" },
+                    { key: "D", text: "will have finished/will get" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa giống Câu 4. <br>2. Phân tích: Công thức kinh điển: By the time + S + Hiện tại đơn, S + Tương lai hoàn thành. Do đó chọn cặp 'will have finished / get' ứng với đáp án B."
+            },
+            {
+                id: 22,
+                question: "This is the third time he ______ his driving test this year.",
+                options: [
+                    { key: "A", text: "fails" },
+                    { key: "B", text: "failed" },
+                    { key: "C", text: "has failed" },
+                    { key: "D", text: "is failing" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Đây là lần thứ ba anh ấy trượt kỳ thi sát hạch lái xe trong năm nay.<br>2. Phân tích cấu trúc số lần: This is the first/second/third... time + S + Hiện tại hoàn thành.<br>3. Tại sao đúng: 'has failed' tuân thủ đúng cấu trúc đếm số lần trải nghiệm tính đến hiện tại.<br>4. Tại sao sai: Các thì khác không dùng với cấu trúc trải nghiệm lặp lại này."
+            },
+            {
+                id: 23,
+                question: "On ______ the office, he realized he ______ his briefcase inside.",
+                options: [
+                    { key: "A", text: "leaving/forgot" },
+                    { key: "B", text: "leaving/had forgotten" },
+                    { key: "C", text: "left/forgot" },
+                    { key: "D", text: "having left/forgot" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Ngay khi rời khỏi văn phòng, anh ấy nhận ra mình đã bỏ quên chiếc cặp tài liệu ở bên trong.<br>2. Phân tích ngữ pháp: 'On + V-ing' nghĩa là khi làm gì. Việc bỏ quên hành lý diễn ra trước việc rời đi và nhận ra (realized - quá khứ đơn).<br>3. Tại sao đúng: Hành động xảy ra trước quá khứ đơn phải được chia ở Quá khứ hoàn thành (had forgotten).<br>4. Tại sao sai: A sai thì của vế sau; C sai dạng sau giới từ On; D sai logic hành động."
+            },
+            {
+                id: 24,
+                question: "[Lặp lại Q14] At this time tomorrow, we ________ over the Atlantic on our way to New York.",
+                options: [
+                    { key: "A", text: "will fly" },
+                    { key: "B", text: "will be flying" },
+                    { key: "C", text: "fly" },
+                    { key: "D", text: "will have flown" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa giống Câu 14. Diễn tả hành động đang xảy ra tại thời điểm cụ thể trong tương lai nên chọn Tương lai tiếp diễn."
+            },
+            {
+                id: 25,
+                question: "[Lặp lại Q9] By the time the rescue team arrived, the hikers ______ in the cave for three days.",
+                options: [
+                    { key: "A", text: "were trapped" },
+                    { key: "B", text: "had been trapped" },
+                    { key: "C", text: "have been trapped" },
+                    { key: "D", text: "are trapped" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa giống Câu 9. Bị mắc kẹt xảy ra trước mốc quá khứ đơn 'arrived' và có khoảng thời gian 'for three days' nên dùng Quá khứ hoàn thành bị động."
+            },
+            {
+                id: 26,
+                question: "[Lặp lại Q8] By 2030, scientists ______ a sustainable way to colonize Mars.",
+                options: [
+                    { key: "A", text: "will find" },
+                    { key: "B", text: "will be finding" },
+                    { key: "C", text: "will have found" },
+                    { key: "D", text: "find" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa giống Câu 8. Cấu trúc 'By + mốc tương lai' dẫn đến việc dùng thì Tương lai hoàn thành 'will have found'."
+            },
+            {
+                id: 27,
+                question: "The witness initially claimed he didn’t see the suspect, but later admitted he ______ a lie to protect his friend.",
+                options: [
+                    { key: "A", text: "had been telling" },
+                    { key: "B", text: "was telling" },
+                    { key: "C", text: "has told" },
+                    { key: "D", text: "told" }
+                ],
+                correct: "A",
+                explanation: "1. Dịch nghĩa: Nhân chứng ban đầu khẳng định không nhìn thấy nghi phạm, nhưng sau đó thừa nhận rằng mình đã và đang nói dối để bảo vệ bạn mình.<br>2. Phân tích: Hành động nói dối diễn ra liên tục trong suốt giai đoạn trước khi thừa nhận ('admitted' - quá khứ đơn).<br>3. Tại sao đúng: 'had been telling' (Quá khứ hoàn thành tiếp diễn) nhấn mạnh quá trình nói dối kéo dài âm thầm trước đó.<br>4. Tại sao sai: B không đủ mạnh để chỉ việc xảy ra trước mốc quá khứ thừa nhận; C thuộc dòng hiện tại; D không nêu bật được tính tiếp diễn kéo dài của lời nói dối."
+            },
+            {
+                id: 28,
+                question: "I ______ my keys. I ______ them everywhere but I can’t find them.",
+                options: [
+                    { key: "A", text: "lost/look" },
+                    { key: "B", text: "have lost/have been looking" },
+                    { key: "C", text: "lost/am looking" },
+                    { key: "D", text: "had lost/looked" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Tôi làm mất chìa khóa rồi. Tôi đã và đang tìm chúng khắp mọi nơi nhưng vẫn chưa tìm thấy.<br>2. Phân tích: Việc mất chìa khóa để lại hậu quả ở hiện tại là 'can't find them' (dùng Hiện tại hoàn thành). Hành động tìm kiếm diễn ra liên tục từ lúc mất đến giờ (dùng Hiện tại hoàn thành tiếp diễn).<br>3. Tại sao đúng: Đáp án B 'have lost / have been looking' đáp ứng tuyệt đối logic này.<br>4. Tại sao sai: Các phương án còn lại phá vỡ tính liên kết dòng thời gian hiện tại."
+            },
+            {
+                id: 29,
+                question: "I ______ for you for nearly an hour! Where have you been?",
+                options: [
+                    { key: "A", text: "am waiting" },
+                    { key: "B", text: "have been waiting" },
+                    { key: "C", text: "waited" },
+                    { key: "D", text: "was waiting" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Mình đã đứng chờ cậu suốt gần một tiếng đồng hồ rồi đấy! Cậu đã ở đâu vậy?<br>2. Phân tích: Hành động chờ đợi kéo dài liên tục từ quá khứ đến hiện tại có khoảng thời gian 'for nearly an hour' và người kia vừa mới xuất hiện.<br>3. Tại sao đúng: Hiện tại hoàn thành tiếp diễn 'have been waiting' nhấn mạnh công sức và thời gian chờ đợi.<br>4. Tại sao sai: A chỉ hành động tại thời điểm nói; C và D ngắt kết nối quá khứ không có tính liên tục tích lũy đến hiện tại."
+            },
+            {
+                id: 30,
+                question: "At the end of this semester, the professor ______ at this university for exactly forty years.",
+                options: [
+                    { key: "A", text: "will be teaching" },
+                    { key: "B", text: "is going to teach" },
+                    { key: "C", text: "will have been teaching" },
+                    { key: "D", text: "has been teaching" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Tính đến cuối học kỳ này, giáo sư sẽ đã giảng dạy tại trường đại học này được tròn bốn mươi năm.<br>2. Phân tích: Mốc thời gian 'At the end of this semester' kết hợp khoảng thời gian tích lũy 'for exactly forty years'.<br>3. Tại sao đúng: Dùng thì Tương lai hoàn thành tiếp diễn 'will have been teaching' để đo tổng thời lượng của một hành động tính đến một thời điểm tương lai.<br>4. Tại sao sai: Các thì khác không đáp ứng được mục đích đo thời gian tích lũy tương lai."
+            },
+            {
+                id: 31,
+                question: "By the end of this month, the project ______ for over a year.",
+                options: [
+                    { key: "A", text: "will run" },
+                    { key: "B", text: "will have been running" },
+                    { key: "C", text: "has run" },
+                    { key: "D", text: "is running" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Tính đến cuối tháng này, dự án sẽ đã được triển khai chạy được hơn một năm.<br>2. Phân tích: Cấu trúc tương tự câu số 30, 'By the end of this month' làm mốc tương lai kèm khoảng thời gian 'for over a year'.<br>3. Tại sao đúng: Sử dụng Tương lai hoàn thành tiếp diễn 'will have been running'.<br>4. Tại sao sai: A, C, D không dùng đúng bản chất phối thì tích lũy."
+            },
+            {
+                id: 32,
+                question: "I ______ my dinner when you called, which is why I didn’t answer.",
+                options: [
+                    { key: "A", text: "had" },
+                    { key: "B", text: "was having" },
+                    { key: "C", text: "have had" },
+                    { key: "D", text: "have been having" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Lúc bạn gọi điện tới thì tôi đang ăn tối, đó là lý do vì sao tôi không bắt máy.<br>2. Phân tích: Hành động đang xảy ra trong quá khứ (ăn tối - dùng Quá khứ tiếp diễn) thì hành động khác đột ngột xen vào (gọi điện - quá khứ đơn 'called').<br>3. Tại sao đúng: 'was having' diễn tả đúng trạng thái đang diễn ra.<br>4. Tại sao sai: A biến thành hành động ngắn; C, D sai dòng thời gian."
+            },
+            {
+                id: 33,
+                question: "After the guests ______, I ______ the mess they had left behind.",
+                options: [
+                    { key: "A", text: "left/cleaned" },
+                    { key: "B", text: "had left/cleaned" },
+                    { key: "C", text: "left/had cleaned" },
+                    { key: "D", text: "have left/cleaned" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Sau khi khách khứa rời đi, tôi đã dọn dẹp đống bừa bộn mà họ để lại.<br>2. Phân tích: Sau từ 'After', hành động xảy ra trước chia Quá khứ hoàn thành, hành động xảy ra sau chia Quá khứ đơn.<br>3. Tại sao đúng: Khách đi trước ('had left'), dọn dẹp sau ('cleaned'). Đáp án B hoàn toàn chính xác.<br>4. Tại sao sai: Các phương án khác đặt sai vị trí hoặc sai dòng thời gian của hành động trước sau."
+            },
+            {
+                id: 34,
+                question: "The film ______ by the time we ______ to the cinema.",
+                options: [
+                    { key: "A", text: "will start/get" },
+                    { key: "B", text: "starts/will get" },
+                    { key: "C", text: "will have started/get" },
+                    { key: "D", text: "will be starting/got" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Bộ phim sẽ đã bắt đầu trước khi chúng tôi đến được rạp chiếu phim.<br>2. Phân tích: Cấu trúc tương lai: 'By the time + S + Hiện tại đơn (get), S + Tương lai hoàn thành (will have started)'.<br>3. Tại sao đúng: Diễn tả bộ phim chiếu trước mốc chúng ta đến nơi trong tương lai.<br>4. Tại sao sai: A, B, D vi phạm quy tắc kết hợp và phối thì thời gian tương lai."
+            },
+            {
+                id: 35,
+                question: "I ______ my old teacher while I ______ in the park yesterday.",
+                options: [
+                    { key: "A", text: "ran into/walked" },
+                    { key: "B", text: "was running into/walked" },
+                    { key: "C", text: "ran into/was walking" },
+                    { key: "D", text: "run into/was walking" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Tôi đã vô tình gặp lại thầy giáo cũ của mình trong khi tôi đang đi bộ dạo mát ở công viên ngày hôm qua.<br>2. Phân tích: Hành động đang diễn ra (đi bộ dạo mát - Quá khứ tiếp diễn) thì hành động khác đột ngột cắt ngang (tình cờ gặp - Quá khứ đơn).<br>3. Tại sao đúng: 'ran into / was walking' đáp ứng chuẩn cấu trúc phối thì này.<br>4. Tại sao sai: Động từ 'ran into' (tình cờ gặp) mang tính khoảnh khắc, không dùng tiếp diễn như đáp án B; D sai dạng động từ."
+            },
+            {
+                id: 36,
+                question: "[Lặp lại Q11] I _______ for the company for twenty years by the time I retire next month.",
+                options: [
+                    { key: "A", text: "will work" },
+                    { key: "B", text: "will be working" },
+                    { key: "C", text: "will have been working" },
+                    { key: "D", text: "have work" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa giống Câu 11. Nhấn mạnh khoảng thời gian tích lũy liên tục tính đến một mốc ở tương lai nên ta dùng Tương lai hoàn thành tiếp diễn."
+            },
+            {
+                id: 37,
+                question: "The cake ______ delicious! Can I have the recipe?",
+                options: [
+                    { key: "A", text: "is smelling" },
+                    { key: "B", text: "smells" },
+                    { key: "C", text: "smelt" },
+                    { key: "D", text: "has smelled" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Chiếc bánh kem này có mùi thơm ngon tuyệt cú mèo! Cho mình xin công thức làm được không?<br>2. Phân tích ngữ pháp: Động từ 'smell' đóng vai trò là một động từ trạng thái (Stative Verb) chỉ giác quan cảm nhận nhận thức tại hiện tại.<br>3. Tại sao đúng: Động từ trạng thái không chia thể tiếp diễn khi nói về đặc tính của vật, chia hiện tại đơn 'smells' là đúng.<br>4. Tại sao sai: A sai vì chia tiếp diễn; C và D sai lệch ngữ cảnh thực tế ở hiện tại (vế sau đòi xin công thức ngay)."
+            },
+            {
+                id: 38,
+                question: "When I ______ my degree, I ______ for this firm for five years.",
+                options: [
+                    { key: "A", text: "get/will work" },
+                    { key: "B", text: "will get/work" },
+                    { key: "C", text: "get/will have been working" },
+                    { key: "D", text: "got/had been working" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Khi tôi nhận được bằng tốt nghiệp, tôi sẽ đã làm việc tại công ty này được tròn năm năm.<br>2. Phân tích: Hành động nhận bằng ở tương lai nằm trong mệnh đề thời gian 'When + Hiện tại đơn (get)'. Hành động làm việc tích lũy thời gian tính tới mốc đó chia Tương lai hoàn thành tiếp diễn.<br>3. Tại sao đúng: Phương án C 'get / will have been working' khớp hoàn toàn logic.<br>4. Tại sao sai: Các câu khác sai cấu trúc mệnh đề trạng ngữ chỉ thời gian hoặc sai phối hợp thì."
+            },
+            {
+                id: 39,
+                question: "We ______ to go to the coast for the weekend, but the car broke down on Friday night.",
+                options: [
+                    { key: "A", text: "hoped" },
+                    { key: "B", text: "had been hoping" },
+                    { key: "C", text: "have hoped" },
+                    { key: "D", text: "were hoping" }
+                ],
+                correct: "D",
+                explanation: "1. Dịch nghĩa: Chúng tôi đã hy vọng có thể đi đến vùng bờ biển vào cuối tuần, thế nhưng chiếc xe lại bị hỏng vào tối thứ Sáu.<br>2. Phân tích ngữ pháp: Thì Quá khứ tiếp diễn 'were hoping' thường dùng để diễn tả một dự định, hy vọng trong quá khứ nhưng sau đó không thành sự thật do có biến cố cắt ngang ('but the car broke down').<br>3. Tại sao đúng: 'were hoping' bộc lộ rõ ý định đang ấp ủ thì bị phá hỏng.<br>4. Tại sao sai: A ít dùng trong ngữ cảnh bị phá vỡ kế hoạch trực diện này; B quá nặng nề; C thuộc dòng hiện tại."
+            },
+            {
+                id: 40,
+                question: "My sister ______ for a job since she graduated, but she hasn’t found one yet.",
+                options: [
+                    { key: "A", text: "looks" },
+                    { key: "B", text: "is looking" },
+                    { key: "C", text: "has been looking" },
+                    { key: "D", text: "looked" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Chị gái tôi đã và đang tìm kiếm việc làm kể từ khi tốt nghiệp, thế nhưng chị ấy vẫn chưa tìm được việc.<br>2. Phân tích: Có cấu trúc 'since + quá khứ đơn (graduated)', mệnh đề chính chia Hiện tại hoàn thành tiếp diễn nhằm nhấn mạnh tính liên tục, miệt mài của hành động kéo dài đến nay.<br>3. Tại sao đúng: 'has been looking' đáp ứng tốt tính chất của hành động tìm việc chưa kết thúc.<br>4. Tại sao sai: A, B, D không tuân thủ cấu trúc của từ nhận biết 'since'."
+            },
+            {
+                id: 41,
+                question: "Since the new CEO took over, the company’s shares ______ in value by over 20%, though they have dipped slightly today.",
+                options: [
+                    { key: "A", text: "rose" },
+                    { key: "B", text: "have been rising" },
+                    { key: "C", text: "had risen" },
+                    { key: "D", text: "are rising" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Kể từ khi vị Giám đốc điều hành mới tiếp quản, cổ phiếu của công ty đã liên tục tăng giá trị hơn 20%, mặc dù hôm nay chúng có giảm nhẹ đôi chút.<br>2. Phân tích: Đi sau cấu trúc 'Since + S + V(quá khứ đơn)', mệnh đề chính cần dùng Hiện tại hoàn thành hoặc Hiện tại hoàn thành tiếp diễn để diễn tả quá trình phát triển kéo dài.<br>3. Tại sao đúng: 'have been rising' mô tả chân thực quá trình tăng liên tục của giá cổ phiếu từ mốc tiếp quản tới nay.<br>4. Tại sao sai: A dùng quá khứ đơn; C dùng quá khứ hoàn thành; D dùng hiện tại tiếp diễn đều không hợp ngữ pháp của 'Since'."
+            },
+            {
+                id: 42,
+                question: "I ______ why he’s being so difficult today; he’s normally such a cooperative person.",
+                options: [
+                    { key: "A", text: "don’t understand" },
+                    { key: "B", text: "haven’t understood" },
+                    { key: "C", text: "am not understanding" },
+                    { key: "D", text: "had hadn’t understood" }
+                ],
+                correct: "A",
+                explanation: "1. Dịch nghĩa: Tôi không hiểu nổi tại sao hôm nay anh ấy lại trở nên khó tính như vậy; bình thường anh ấy là một người rất biết hợp tác cơ mà.<br>2. Phân tích ngữ pháp: Động từ 'understand' (hiểu) là một động từ chỉ trạng thái nhận thức trí tuệ tư duy (Stative Verb).<br>3. Tại sao đúng: Động từ trạng thái nhận thức tuyệt đối không chia ở dạng tiếp diễn. Do đó chọn Hiện tại đơn dạng phủ định 'don't understand'.<br>4. Tại sao sai: C sai nghiêm trọng vì chia tiếp diễn; B và D không phù hợp ngữ cảnh nhận biết thực tế ngay lúc nói."
+            },
+            {
+                id: 43,
+                question: "By the time the whistleblower finally ______ public, the corporation ______ the evidence for months.",
+                options: [
+                    { key: "A", text: "went/had been destroying" },
+                    { key: "B", text: "goes/will have destroyed" },
+                    { key: "C", text: "had gone/was destroying" },
+                    { key: "D", text: "went/has been destroying" }
+                ],
+                correct: "A",
+                explanation: "1. Dịch nghĩa: Vào thời điểm người tố giác cuối cùng đưa sự việc ra ánh sáng, tập đoàn này đã tiến hành tiêu hủy các bằng chứng suốt nhiều tháng trời.<br>2. Phân tích: 'By the time + S + V(quá khứ đơn - went)', vế sau dùng Quá khứ hoàn thành tiếp diễn để nhấn mạnh hành động phá hủy chứng cứ diễn ra liên tục trước mốc quá khứ đó.<br>3. Tại sao đúng: Đáp án A 'went / had been destroying' khớp toàn diện cấu trúc.<br>4. Tại sao sai: Các phương án khác lắp ghép sai lệch dòng thời gian hoặc sai quy tắc lùi thì quá khứ."
+            },
+            {
+                id: 44,
+                question: "I ______ to finish the manuscript by Friday, but unforeseen circumstances ______ my plans.",
+                options: [
+                    { key: "A", text: "hope/disrupted" },
+                    { key: "B", text: "had hoped/disrupted" },
+                    { key: "C", text: "have hoped/disrupt" },
+                    { key: "D", text: "was hoping/have been disrupting" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Tôi đã từng hy vọng sẽ hoàn thành bản thảo trước thứ Sáu, nhưng những tình huống bất ngờ không lường trước đã làm đảo lộn kế hoạch của tôi.<br>2. Phân tích ngữ pháp: Động từ 'hope' chia ở Quá khứ hoàn thành 'had hoped' dùng để diễn tả một mong muốn, kỳ vọng trong quá khứ nhưng thực tế đã không thể diễn ra.<br>3. Tại sao đúng: Việc hy vọng có trước và đã sụp đổ khi sự cố xảy ra làm đảo lộn ('disrupted' - quá khứ đơn). Chọn B.<br>4. Tại sao sai: Các phương án còn lại không bộc lộ đúng bản chất của việc một hy vọng bị dập tắt trong quá khứ."
+            },
+            {
+                id: 45,
+                question: "I ______ with this software all morning, but for some reason, the “export” function simply won’t work.",
+                options: [
+                    { key: "A", text: "have been struggling" },
+                    { key: "B", text: "struggled" },
+                    { key: "C", text: "had been struggling" },
+                    { key: "D", text: "am struggling" }
+                ],
+                correct: "A",
+                explanation: "1. Dịch nghĩa: Tôi đã vật lộn với cái phần mềm này suốt cả buổi sáng rồi, nhưng không hiểu vì lý do gì, chức năng 'xuất tệp' vẫn không chịu hoạt động.<br>2. Phân tích: Hành động diễn ra liên tục suốt cả buổi sáng kéo dài đến hiện tại và hiện tại hậu quả vẫn còn ('won't work').<br>3. Tại sao đúng: Thì Hiện tại hoàn thành tiếp diễn 'have been struggling' là lựa chọn tối ưu nhất để nhấn mạnh tính liên tục và sự mệt mỏi của hành động.<br>4. Tại sao sai: B cắt đứt quá khứ; C lùi thì sai ngữ cảnh; D không thể hiện được khoảng thời gian tích tụ 'all morning'."
+            },
+            {
+                id: 46,
+                question: "By the time the whistleblower’s identity was finally revealed, several key documents ______ from the company’s main server.",
+                options: [
+                    { key: "A", text: "had vanished" },
+                    { key: "B", text: "have vanished" },
+                    { key: "C", text: "would vanish" },
+                    { key: "D", text: "had been vanishing" }
+                ],
+                correct: "A",
+                explanation: "1. Dịch nghĩa: Trước thời điểm danh tính của người tố giác cuối cùng bị tiết lộ, vài tài liệu quan trọng đã biến mất khỏi máy chủ chính của công ty.<br>2. Phân tích: Hành động biến mất diễn ra và hoàn tất trước mốc quá khứ bị tiết lộ danh tính ('was revealed' - quá khứ đơn).<br>3. Tại sao đúng: Chia thì Quá khứ hoàn thành 'had vanished' để biểu thị hành động xảy ra trước hành động quá khứ khác.<br>4. Tại sao sai: B sai dòng thời gian; C sai cấu trúc; D sai vì động từ 'vanish' mang tính chất khoảnh khắc biến mất, ít khi kéo dài từ từ ở dạng tiếp diễn trong văn cảnh này."
+            },
+            {
+                id: 47,
+                question: "The professor ______ the lecture for nearly an hour, by which point several students ______ off.",
+                options: [
+                    { key: "A", text: "was giving/nodded" },
+                    { key: "B", text: "had been giving/had nodded" },
+                    { key: "C", text: "has been giving/nod" },
+                    { key: "D", text: "gave/were nodding" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Giáo sư đã giảng bài được gần một tiếng đồng hồ, tính đến thời điểm đó thì vài học sinh đã ngủ gật mất rồi.<br>2. Phân tích: Việc giảng bài diễn ra liên tục trước một thời điểm quá khứ (chia Quá khứ hoàn thành tiếp diễn: had been giving). Hành động ngủ gật cũng xảy ra hoàn tất tại mốc đó (chia Quá khứ hoàn thành: had nodded).<br>3. Tại sao đúng: Cặp thì ở đáp án B giải quyết trọn vẹn trình tự trước sau của chuỗi sự kiện trong quá khứ.<br>4. Tại sao sai: Các cặp phối thì còn lại vi phạm logic thời gian và quy tắc ngữ pháp."
+            },
+            {
+                id: 48,
+                question: "When the CEO ______ the office that morning, several employees were already waiting outside to discuss the issue.",
+                options: [
+                    { key: "A", text: "arrives" },
+                    { key: "B", text: "arrived" },
+                    { key: "C", text: "had arrived" },
+                    { key: "D", text: "has arrived" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Khi vị Giám đốc điều hành đến văn phòng vào buổi sáng hôm đó, vài nhân viên đã đang đứng chờ sẵn ở bên ngoài để thảo luận về vấn đề.<br>2. Phân tích: Hành động đang diễn ra nền (nhân viên đứng chờ - 'were already waiting' - quá khứ tiếp diễn) thì hành động khác ngắn hơn chen ngang vào.<br>3. Tại sao đúng: Hành động chen ngang chia ở Quá khứ đơn, vì vậy 'arrived' là đáp án đúng.<br>4. Tại sao sai: A và D là thì hiện tại; C dùng quá khứ hoàn thành không đúng tính chất xen vào của sự việc."
+            },
+            {
+                id: 49,
+                question: "The research team ______ the data for over a year, but they still haven’t found a consistent pattern that explains the anomaly.",
+                options: [
+                    { key: "A", text: "had scrutinized" },
+                    { key: "B", text: "has been scrutinizing" },
+                    { key: "C", text: "will have been scrutinizing" },
+                    { key: "D", text: "scrutinized" }
+                ],
+                correct: "B",
+                explanation: "1. Dịch nghĩa: Đội ngũ nghiên cứu đã và đang xem xét kỹ lưỡng các dữ liệu suốt hơn một năm qua, thế nhưng họ vẫn chưa tìm ra một quy luật nhất quán nào giải thích được sự bất thường.<br>2. Phân tích: Hành động nghiên cứu kéo dài từ quá khứ, chạy xuyên suốt 'for over a year' tới tận hiện tại và vẫn chưa kết thúc ('still haven't found').<br>3. Tại sao đúng: Hiện tại hoàn thành tiếp diễn 'has been scrutinizing' diễn tả hoàn hảo hành động kéo dài liên tục tới hiện tại.<br>4. Tại sao sai: A thuộc quá khứ; C thuộc tương lai; D là quá khứ đơn không thể kết nối dữ kiện với vế hiện tại hoàn thành phía sau."
+            },
+            {
+                id: 50,
+                question: "After the committee ______ all the available evidence, they decided to postpone the final decision.",
+                options: [
+                    { key: "A", text: "reviews" },
+                    { key: "B", text: "reviewed" },
+                    { key: "C", text: "had reviewed" },
+                    { key: "D", text: "has reviewed" }
+                ],
+                correct: "C",
+                explanation: "1. Dịch nghĩa: Sau khi ủy ban xem xét tất cả các bằng chứng có sẵn, họ đã quyết định hoãn việc đưa ra phán quyết cuối cùng.<br>2. Phân tích: Hành động xem xét bằng chứng diễn ra và kết thúc hoàn toàn trước hành động quyết định trì hoãn ('decided' - quá khứ đơn).<br>3. Tại sao đúng: Theo quy tắc phối thì với After: After + S + Quá khứ hoàn thành, S + Quá khứ đơn. Do đó chọn 'had reviewed' (C).<br>4. Tại sao sai: A và D dùng thì hiện tại; B dùng quá khứ đơn không làm nổi bật thứ tự trước sau rõ ràng như quá khứ hoàn thành."
+            }
+        ];
+
+        // --- HÀM KHỞI TẠO VÀ XÁO TRỘN ĐÁP ÁN (SHUFFLE ARRAY) ---
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+        // --- BỘ PHÁT ÂM THANH TỰ ĐỘNG (WEB AUDIO API) ---
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playSound(type) {
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'correct') {
+                // Tiếng Ding thánh thót cao vút
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+                osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1); // A5
+                gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.4);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.4);
+            } else {
+                // Tiếng Téo teo / Oh no trầm ấm vui nhộn
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(180, audioCtx.currentTime); 
+                osc.frequency.setValueAtTime(120, audioCtx.currentTime + 0.15); 
+                gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.5);
+            }
+        }
+
+        // --- HỆ THỐNG PHÁO GIẤY CONFETTI TỰ VẼ TRÊN CANVAS ---
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+        let confettiPieces = [];
+        let animationFrameId;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function createConfetti() {
+            confettiPieces = [];
+            const colors = ['#FF4757', '#00D26A', '#00C9A7', '#FDCB6E', '#8854C0', '#FF9F43'];
+            for (let i = 0; i < 120; i++) {
+                confettiPieces.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 8 + 6,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedX: Math.random() * 4 - 2,
+                    speedY: Math.random() * 5 + 4,
+                    rotation: Math.random() * 360,
+                    rotationSpeed: Math.random() * 4 - 2
+                });
+            }
+            animateConfetti();
+        }
+
+        function animateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            let alive = false;
+            confettiPieces.forEach(p => {
+                p.y += p.speedY;
+                p.x += p.speedX;
+                p.rotation += p.rotationSpeed;
+                
+                if (p.y < canvas.height) {
+                    alive = true;
+                }
+
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate((p.rotation * Math.PI) / 180);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                ctx.restore();
+            });
+
+            if (alive) {
+                animationFrameId = requestAnimationFrame(animateConfetti);
+            } else {
+                cancelAnimationFrame(animationFrameId);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        // --- KHỞI TẠO BÀI TRẮC NGHIỆM VÀ ĐẢO ĐÁP ÁN ---
+        const userAnswers = {}; 
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            questionsData.forEach((q, idx) => {
+                // Bản sao danh sách option để xáo trộn không ảnh hưởng gốc
+                let optsCopy = [...q.options];
+                shuffle(optsCopy);
+
+                // Lưu bản đồ đáp án sau khi trộn để đối chiếu đáp án gốc đúng chuẩn
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `card-${q.id}`;
+
+                card.innerHTML = `
+                    <span class="question-number">Câu hỏi ${idx + 1}/50</span>
+                    <div class="question-text">${q.question}</div>
+                    <div class="options-grid" id="grid-${q.id}">
+                        ${optsCopy.map(opt => `
+                            <button class="option-btn" 
+                                    data-qid="${q.id}" 
+                                    data-key="${opt.key}" 
+                                    onclick="checkAnswer(this, ${q.id}, '${opt.key}', '${q.correct}')">
+                                ${opt.text}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div class="explanation-box" id="explain-${q.id}">
+                        <h4>💡 HƯỚNG DẪN GIẢI CHI TIẾT</h4>
+                        <div class="explanation-content">${q.explanation}</div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- XỬ LÝ CHỌN ĐÁP ÁN TỨC THỜI ---
+        function checkAnswer(btn, qId, selectedKey, correctKey) {
+            const grid = document.getElementById(`grid-${qId}`);
+            const buttons = grid.querySelectorAll('.option-btn');
+            const card = document.getElementById(`card-${qId}`);
+            const explainBox = document.getElementById(`explain-${qId}`);
+
+            // Lưu lựa chọn của học sinh
+            userAnswers[qId] = selectedKey;
+
+            // Vô hiệu hóa tất cả các nút trong câu này sau khi chọn
+            buttons.forEach(b => b.setAttribute('disabled', 'true'));
+
+            if (selectedKey === correctKey) {
+                // Trả lời ĐÚNG
+                btn.classList.add('correct');
+                playSound('correct');
+                createConfetti();
+            } else {
+                // Trả lời SAI
+                btn.classList.add('wrong');
+                card.classList.add('shake-animation');
+                playSound('wrong');
+
+                // Đồng thời làm nổi bật nút đúng lên cho học sinh thấy
+                buttons.forEach(b => {
+                    if (b.getAttribute('data-key') === correctKey) {
+                        b.classList.add('correct');
+                    }
+                });
+
+                // Xóa hiệu ứng rung lắc sau khi chạy xong để có thể kích hoạt lại nếu muốn
+                setTimeout(() => {
+                    card.classList.remove('shake-animation');
+                }, 500);
+            }
+
+            // Hiện ngay lập tức khung giải thích siêu chi tiết
+            explainBox.classList.add('show');
+        }
+
+        // --- LOGIC CHẤM ĐIỂM VÀ LỜI NHẬN XÉT ĐỘNG VIÊN ---
+        function calculateTotalResult() {
+            let correctCount = 0;
+            const totalQuestions = questionsData.length;
+
+            questionsData.forEach(q => {
+                if (userAnswers[q.id] === q.correct) {
+                    correctCount++;
+                }
+            });
+
+            const percentage = (correctCount / totalQuestions) * 100;
+            let comment = "";
+
+            if (percentage < 50) {
+                comment = "Điểm lần này chưa cao lắm, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!";
+            } else if (percentage >= 60 && percentage <= 80) {
+                comment = "Con đã có tiến bộ khá ổn rồi, con cố gắng đọc kỹ giải thích đáp án và làm lại nha. Cô tin con sẽ làm tốt hơn ở lần sau!";
+            } else if (percentage >= 90) {
+                comment = "Làm tốt lắm, con cố gắng ring điểm 10 ở lần sau nha!";
+            } else {
+                // Trường hợp rơi vào vùng 50% - 59% hoặc 81% - 89% để bảo toàn tính liên tục
+                comment = "Kết quả rất đáng khích lệ! Con hãy rà soát lại các câu sai thông qua hộp giải thích để đạt điểm tuyệt đối nhé!";
+            }
+
+            // Hiển thị dữ liệu lên popup modal
+            document.getElementById('score-text').innerText = `${correctCount} / ${totalQuestions}`;
+            document.getElementById('comment-text').innerText = comment;
+            document.getElementById('score-modal').classList.add('active');
+
+            if (percentage >= 60) {
+                createConfetti();
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('score-modal').classList.remove('active');
+        }
+
+        // Tự động chạy tải giao diện bài thi khi mở trang web
+        window.onload = renderQuiz;
+    </script>
+</body>
+</html>
